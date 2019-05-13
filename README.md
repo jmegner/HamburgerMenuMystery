@@ -5,7 +5,7 @@ Notable alterations:
 
 * skipping of login page stuff
 
-* ViewA through ViewB display...
+* ViewA through ViewC display...
 
     * The `message` navigation parameter
 
