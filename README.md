@@ -25,10 +25,17 @@ Current questions I have...
 
     * In ViewA.xaml.cs, Xamarin's Navigation.NavigationStack is "/ViewA" (and the ModalStack is empty); where did "/Index" go?  Why does the Xamarin NavigationStack differ from Prism's GetNavigationUriPath?
 
+![ViewA, why is "/Index" absent?](screenshots/02_ViewA_where_is_index_annotated.png)
+
 * If you then click the hamburger icon so you get the MainPage master page, and click the "N/A" button so MainPageViewModel does a `_navigationService.NavigateAsync("Navigation/ViewA?message=NA")`...
 
     * Prism's GetNavigationUriPath returns "/Index/Navigation/ViewA"; why does "Index" appear now and not before?
+
+![ViewA, why is "/Index" present?](screenshots/04_ViewA_index_appears.png)
+
 * If you then click the hamburger icon and then click the "N/B" button, so the MainPageViewModel does a `_navigationService.NavigateAsync("Navigation/ViewB?message=NB")`...
 
     * Prism's GetNavigationUriPath returns "/Index/Navigation/ViewA/Navigation?useModalNavigation=true/ViewB"; why the `useModalNavigation=true`, especially considering that MainPageViewModel uses `useModalNavigation: false` when calling NavigateAsync?
     * Xamarin's Navigation.NavigationStack is simply "/ViewB" and ModalStack is again empty; why are these stacks so different from what GetNavigationUriPath indicates?
+
+![ViewB, why modal?](screenshots/06_ViewB_why_modal.png)
