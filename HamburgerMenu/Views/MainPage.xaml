@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HamburgerMenu.Views.MainPage">
+    <MasterDetailPage.Master>
+        <!-- Hamburger Menu Secret Sauce... Add an Icon!!!! Make sure it's in your resources for your Platform Project -->
+        <NavigationPage Title="Required Foo" Icon="hamburger.png">
+            <x:Arguments>
+                <ContentPage Title="Menu">
+                    <StackLayout Padding="5">
+                        <Button Text="N/A" Command="{Binding NavigateCommand}" CommandParameter="Navigation/ViewA?message=NA" />
+                        <Button Text="N/B" Command="{Binding NavigateCommand}" CommandParameter="Navigation/ViewB?message=NB" />
+                        <Button Text="N/C" Command="{Binding NavigateCommand}" CommandParameter="Navigation/ViewC?message=NC" />
+                        <Button Text="N/A/B" Command="{Binding NavigateCommand}" CommandParameter="Navigation/ViewA?message=NAB/ViewB?message=NAB" />
+                        <Button Text="N/A/N/B" Command="{Binding NavigateCommand}" CommandParameter="Navigation/ViewA?message=NANB/Navigation/ViewB?message=NANB" />
+                        <Button Text="C" Command="{Binding NavigateCommand}" CommandParameter="ViewC?message=C" />
+                        <!-- <Button Text="View C via XAML" Command="{prism:NavigateTo ViewC?message=ViaXaml}" /> -->
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
