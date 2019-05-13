@@ -31,7 +31,7 @@ Current questions I have...
 
     * Prism's GetNavigationUriPath returns "/Index/Navigation/ViewA"; why does "Index" appear now and not before?
 
-![ViewA, why is "/Index" present?](screenshots/04_ViewA_index_appears.png)
+![ViewA, why is "/Index" present?](screenshots/05_ViewA_index_appears_annotated.png)
 
 * If you then click the hamburger icon and then click the "N/B" button, so the MainPageViewModel does a `_navigationService.NavigateAsync("Navigation/ViewB?message=NB")`...
 
