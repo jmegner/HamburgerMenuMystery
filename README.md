@@ -17,7 +17,7 @@ Notable alterations:
 
 Current questions I have...
 
-* What exactly happens when you do a NavigationService.NavigateAsync("NavigationPage/SomeContentPage")? It causes you do naviate to SomeContentPage that is wrapped in a NavigationPage (so you get navigation icon, title, and toolbar items shown), right?
+* What exactly happens when you do a NavigationService.NavigateAsync("NavigationPage/SomeContentPage")? It causes you do navigate to SomeContentPage that is wrapped in a NavigationPage (so you get navigation icon, title, and toolbar items shown), right?
 
 * App.xaml.cs navigates to "/Index/Navigation/ViewA?message=InitialNav" ("Index" is an alias for MainPage)
 
