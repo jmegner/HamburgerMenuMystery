@@ -15,7 +15,7 @@ Notable alterations:
 
 * More navigation buttons in MainPage's master page.
 
-Current questions I have...
+# Questions I had...
 
 * What exactly happens when you do a NavigationService.NavigateAsync("NavigationPage/SomeContentPage")? It causes you do navigate to SomeContentPage that is wrapped in a NavigationPage (so you get navigation icon, title, and toolbar items shown), right?
 
@@ -39,3 +39,18 @@ Current questions I have...
     * Xamarin's Navigation.NavigationStack is simply "/ViewB" and ModalStack is again empty; why are these stacks so different from what GetNavigationUriPath indicates?
 
 ![ViewB, why modal?](screenshots/06_ViewB_why_modal.png)
+
+
+# Update With Answers
+
+I posted my question in a [Xamarin forums thread](https://forums.xamarin.com/discussion/156322/weird-navigation-in-hamburgermenu-sample-project-from-prism-samples-forms), and [Brian Lagunas](https://brianlagunas.com/) [himself](https://github.com/orgs/PrismLibrary/people) answered. Thanks, Brian!
+
+In short, navigation from a MasterDetailPage (MDP) is different from normal navigation: mostly it's swapping out the detail page or doing modal navigations.  That's why things are so weird and don't match all the things we've read about navigation (because they are for navigation NOT from a MDP).  It's also possible the missing "/Index" is a GetNavigationUriPath bug.
+
+Possible future work:
+* Create minimal project that exposes the GetNavigationUriPath bug.
+* Create a similar navigation experimentation project that does not use MDP.
+* See if Prism people are interested in a pull request for Prism-Samples-Forms where we upgrade to latest Prism version and we do some changes to HamburgerMenu to make it more best-practices compliant (right now it does a weird mixture of detail page swapping and modal navigation as you bounce around {ViewA,ViewB,ViewC}).
+
+
+
